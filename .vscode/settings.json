@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "duktape.h": "c",
+        "duk_config.h": "c",
+        "memory_resource": "cpp"
+    }
+}
