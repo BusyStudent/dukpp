@@ -2,6 +2,14 @@
     "files.associations": {
         "duktape.h": "c",
         "duk_config.h": "c",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp"
     }
 }

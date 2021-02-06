@@ -1,6 +1,5 @@
 #if !defined(_DUKPP_RUNTIME_HPP_)
 #define _DUKPP_RUNTIME_HPP_
-#include <memory_resource>
 #include "defs.hpp"
 namespace Duk{
     class Context;
@@ -8,15 +7,25 @@ namespace Duk{
         public:
             Runtime();
             Runtime(const Runtime &) = delete;
-            ~Runtime();
+            virtual ~Runtime();
             /**
              * @brief Create a context
              * 
              * @return Context 
              */
             Context create();
-        private:
-            std::pmr::memory_resource *alloc;
+        public:
+            /**
+             * @brief Alloc memory
+             * 
+             * @param byte 
+             * @return void* 
+             */
+            virtual void *alloc(size_t byte);
+            virtual void *realloc(void *ptr,size_t byte);
+            virtual void  free(void *ptr);
+            virtual void  fatal(const char *msg);
+
         friend class Context;
     };
 }
